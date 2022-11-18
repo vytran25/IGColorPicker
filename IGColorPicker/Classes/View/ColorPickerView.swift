@@ -43,6 +43,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             }
         }
     }
+    
     /// The object that acts as the layout delegate for the color picker
     open weak var layoutDelegate: ColorPickerViewDelegateFlowLayout?
     /// The object that acts as the delegate for the color picker
@@ -111,6 +112,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             // Scroll to the first color
             collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
         }
+    }
+    
+    public func reloadData() {
+        self.collectionView.reloadData()
     }
     
     // MARK: - Private Methods
